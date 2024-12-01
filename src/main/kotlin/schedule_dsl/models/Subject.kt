@@ -1,3 +1,4 @@
 package schedule_dsl.models
 
-open class Subject(val name: String)
+//Предмет
+open class Subject(val name: String): Identifiable()
