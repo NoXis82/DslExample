@@ -35,7 +35,7 @@ class Scheduler {
 
     //Распределить
     private fun allocate(
-        teacherAvailability: Any,
+        teacherAvailability: AvailabilityTable,
         studentSchedule: Schedule,
         teacherSchedule: Schedule,
         student: Student,
@@ -43,13 +43,15 @@ class Scheduler {
         events: HashSet<Event>
     ) {
         for (i in 0 until teacherAvailability.width) {
-            if (teacherAvailability[i, j] && studentSchedule[i, j] == null && teacherSchedule[i, j] == null) {
-                Event(i, j, student, teacher).apply {
-                    studentSchedule[i, j] = this
-                    teacherSchedule[i, j] = this
-                    events.add(this)
+            for (j in 0 until teacherAvailability.height) {
+                if (teacherAvailability[i, j] && studentSchedule[i, j] == null && teacherSchedule[i, j] == null) {
+                    Event(i, j, student, teacher).apply {
+                        studentSchedule[i, j] = this
+                        teacherSchedule[i, j] = this
+                        events.add(this)
+                    }
+                    return
                 }
-                return
             }
         }
     }
