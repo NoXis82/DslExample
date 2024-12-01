@@ -1,5 +1,5 @@
 package schedule_dsl.models
 
-class Student {
+class Student : Resource() {
     val subjectRequirements = HashSet<Subject>() //запрашиваемые предметы
 }
