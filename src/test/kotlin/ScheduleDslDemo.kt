@@ -3,7 +3,7 @@ import java.time.DayOfWeek
 import java.time.LocalTime
 import kotlin.test.Test
 
-class KotlinDslDemo {
+class ScheduleDslDemo {
 
     @Test
     fun `demo test`(): Unit = schedule {

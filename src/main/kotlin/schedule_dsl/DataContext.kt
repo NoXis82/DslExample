@@ -1,5 +1,6 @@
 package schedule_dsl
 
+import schedule_dsl.models.Event
 import schedule_dsl.models.Student
 import schedule_dsl.models.Subject
 import schedule_dsl.models.Teacher
