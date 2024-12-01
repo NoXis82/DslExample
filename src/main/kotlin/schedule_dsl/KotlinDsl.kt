@@ -6,6 +6,7 @@ object schedule {
 
 }
 
+@MyCustomDslMarker
 class SchedulingContext {
 
     fun data(init: DataContext.() -> Unit): SchedulingResults {

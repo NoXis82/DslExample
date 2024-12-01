@@ -40,7 +40,7 @@ class ScheduleDslDemo {
                 }
             }
 
-             data { } // isn't compiled here because there is scope control with @DataContextMarker
+            // data { } // isn't compiled here because there is scope control with @DataContextMarker
 
         } assertions {
             println(scheduledEvents)

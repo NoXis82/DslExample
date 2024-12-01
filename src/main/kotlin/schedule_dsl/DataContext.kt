@@ -5,6 +5,7 @@ import java.time.DayOfWeek
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
+@MyCustomDslMarker
 class DataContext {
 
     private val subjects = ArrayList<Subject>()
