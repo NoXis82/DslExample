@@ -1,5 +1,4 @@
 import org.assertj.core.api.AssertionsForClassTypes.assertThat
-import schedule_dsl.AssertionsContext
 import schedule_dsl.SchedulingResults
 import schedule_dsl.models.Event
 

@@ -1,3 +1,4 @@
+import schedule_dsl.models.Schedule
 import schedule_dsl.schedule
 import java.time.DayOfWeek
 import java.time.LocalTime
@@ -6,7 +7,7 @@ import kotlin.test.Test
 class ScheduleDslDemo {
 
     @Test
-    fun `demo test`(): Unit = schedule {
+    fun `demo test`() = schedule {
         data {
             startFrom("08:00")
 
@@ -39,9 +40,11 @@ class ScheduleDslDemo {
                 }
             }
 
-            // data { } // isn't compiled here because there is scope control with @DataContextMarker
+             data { } // isn't compiled here because there is scope control with @DataContextMarker
 
         } assertions {
+            println(scheduledEvents)
+
             for ((day, lesson, student, teacher) in scheduledEvents) {
                 val teacherSchedule: Schedule = teacher.schedule
                 teacherSchedule[day, lesson] shouldNotEqual null
